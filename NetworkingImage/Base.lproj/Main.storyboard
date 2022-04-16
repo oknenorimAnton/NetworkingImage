@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NetworkingImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mRY-Jn-Ugg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажмите для загрузки изображения" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmA-SA-RMs">
+                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrj-cE-fuY">
+                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="getImagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fmi-SK-idy"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DoE-hY-23f">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kmA-SA-RMs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="5Gp-GT-05m"/>
+                            <constraint firstItem="DoE-hY-23f" firstAttribute="centerY" secondItem="mRY-Jn-Ugg" secondAttribute="centerY" id="5UH-5E-uW5"/>
+                            <constraint firstItem="nrj-cE-fuY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="6c4-nG-mgr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nrj-cE-fuY" secondAttribute="trailing" constant="10" id="A2F-GR-3vS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kmA-SA-RMs" secondAttribute="trailing" constant="10" id="Cnv-5B-mjg"/>
+                            <constraint firstItem="mRY-Jn-Ugg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DnJ-p6-0kP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mRY-Jn-Ugg" secondAttribute="trailing" id="IKA-FH-cW7"/>
+                            <constraint firstItem="DoE-hY-23f" firstAttribute="centerX" secondItem="mRY-Jn-Ugg" secondAttribute="centerX" id="Jix-mD-NF0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nrj-cE-fuY" secondAttribute="bottom" constant="10" id="LaG-RC-H1x"/>
+                            <constraint firstItem="mRY-Jn-Ugg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OVP-Nh-Qkf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kmA-SA-RMs" secondAttribute="bottom" constant="10" id="R7I-Co-9hD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mRY-Jn-Ugg" secondAttribute="bottom" id="RAc-cg-7Kn"/>
+                            <constraint firstItem="kmA-SA-RMs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="czW-Db-lpJ"/>
+                            <constraint firstItem="nrj-cE-fuY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="up6-Gq-sYo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="DoE-hY-23f" id="X4I-Sz-TcQ"/>
+                        <outlet property="getImageButton" destination="nrj-cE-fuY" id="YmG-aR-Lji"/>
+                        <outlet property="imageView" destination="mRY-Jn-Ugg" id="u7v-uN-od2"/>
+                        <outlet property="label" destination="kmA-SA-RMs" id="Lg6-oD-hzo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
